@@ -36,6 +36,7 @@ export const Login = ()=>{
         
       const {email , password} = users 
        const res =  await fetch("https://backendsasi1.herokuapp.com/login" , {
+       
          method : "POST" , 
          headers : {
           "Content-Type" : "application/json"
@@ -53,7 +54,7 @@ export const Login = ()=>{
            window.alert("Login Sucessfull");
            setGet(true);
            console.log("Sucessful Login");
-          //navigate.push("/");
+          navigate("/home");
          }
     
 }

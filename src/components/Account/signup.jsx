@@ -35,7 +35,7 @@ export const SignUP = ()=>{
         
            const {email , password} = users 
             const res =  await fetch("https://backendsasi1.herokuapp.com/register" , {
-              // "proxy":  "https://backendsasi1.herokuapp.com/" ,
+              //"proxy" : "http://localhost:2345", 
               method : "POST" , 
               headers : {
                "Content-Type" : "application/json"
@@ -53,7 +53,7 @@ export const SignUP = ()=>{
                 window.alert("Registration Sucessfull");
                 setGet(true);
                 console.log("Sucessful Registration");
-                navigate.push("/");
+                navigate("/");
               }
          
      }
