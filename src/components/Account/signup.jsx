@@ -45,8 +45,8 @@ export const SignUP = ()=>{
  
             const data = await res.json() ;
               
-              if(data.status === 422 ||  !data ){
-                       window.alert("Invalied Registration") ; 
+              if(res.status === 400 ||  !data ){
+                       window.alert("User Already Registred") ; 
                          console.log("Invalied Registration") 
                         
               } else{

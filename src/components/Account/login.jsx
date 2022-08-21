@@ -46,7 +46,7 @@ export const Login = ()=>{
 
        const data = await res.json() ;
          
-         if(data.status === 422 ||  !data ){
+         if(res.status === 400 ||  !data ){
               window.alert("Invalied email or Password") ; 
                 console.log("Invalied Login") 
                    
