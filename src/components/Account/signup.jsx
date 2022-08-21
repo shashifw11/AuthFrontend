@@ -34,7 +34,8 @@ export const SignUP = ()=>{
       const PostData = async()=>{
         
            const {email , password} = users 
-            const res =  await fetch("/register" , {
+            const res =  await fetch("https://backendsasi1.herokuapp.com/register" , {
+              // "proxy":  "https://backendsasi1.herokuapp.com/" ,
               method : "POST" , 
               headers : {
                "Content-Type" : "application/json"

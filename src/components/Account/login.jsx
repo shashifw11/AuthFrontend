@@ -35,7 +35,7 @@ export const Login = ()=>{
     const PostData = async()=>{
         
       const {email , password} = users 
-       const res =  await fetch("/login" , {
+       const res =  await fetch("https://backendsasi1.herokuapp.com/login" , {
          method : "POST" , 
          headers : {
           "Content-Type" : "application/json"
