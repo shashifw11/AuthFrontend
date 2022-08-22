@@ -33,29 +33,31 @@ export const Login = ()=>{
     }
     
     const PostData = async()=>{
+      if(Object.keys(errors).length === 0 && submit== true){
+        const {email , password} = users 
+        const res =  await fetch("https://backendsasi1.herokuapp.com/login" , {
         
-      const {email , password} = users 
-       const res =  await fetch("https://backendsasi1.herokuapp.com/login" , {
-       
-         method : "POST" , 
-         headers : {
-          "Content-Type" : "application/json"
-         } , 
-         body : JSON.stringify({email , password})
-       })
-
-       const data = await res.json() ;
-         
-         if(res.status === 400 ||  !data ){
-              window.alert("Invalied email or Password") ; 
-                console.log("Invalied Login") 
-                   
-         } else{
-           window.alert("Login Sucessfull");
-           setGet(true);
-           console.log("Sucessful Login");
-          navigate("/home");
-         }
+          method : "POST" , 
+          headers : {
+           "Content-Type" : "application/json"
+          } , 
+          body : JSON.stringify({email , password})
+        })
+ 
+        const data = await res.json() ;
+          
+          if(res.status === 400 ||  !data ){
+               window.alert("Invalied email or Password") ; 
+                 console.log("Invalied Login") 
+                    
+          } else{
+            window.alert("Login Sucessfull");
+            setGet(true);
+            console.log("Sucessful Login");
+           navigate("/home");
+          }
+       }
+      
     
 }
 
