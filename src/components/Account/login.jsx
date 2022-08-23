@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import {Link , useNavigate} from "react-router-dom" ; 
 import {useState,useEffect} from "react"; 
 
-export const Login = ()=>{
+export const Login = ({handleUser})=>{
 
   const navigate = useNavigate() ; 
 
@@ -33,7 +33,7 @@ export const Login = ()=>{
     }
     
     const PostData = async()=>{
-      if(Object.keys(errors).length === 0 && submit== true){
+     // if(Object.keys(errors).length === 0 && submit== true){
         const {email , password} = users 
         const res =  await fetch("https://backendsasi1.herokuapp.com/login" , {
         
@@ -53,10 +53,11 @@ export const Login = ()=>{
           } else{
             window.alert("Login Sucessfull");
             setGet(true);
+            handleUser(true) ;
             console.log("Sucessful Login");
-           navigate("/home");
+           navigate("/");
           }
-       }
+    //   }
       
     
 }
